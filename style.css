@@ -1,0 +1,560 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+    --webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar{
+    width: 0.5rem;
+}
+
+::-webkit-scrollbar-track{
+    background: #F5EFE7;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #4F709C;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #213555;
+}
+
+body{
+    min-height: 100vh;
+    background: #F5EFE7;
+}
+
+header{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 3rem;
+    padding-bottom: .5rem;
+    background: #4F709C;
+}
+
+.title{
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #F5EFE7;
+    margin: 0 0 0 2.5rem;
+}
+
+.title p{
+    display: flex;
+    align-items: center;
+    margin: 0.25rem 0;
+}
+
+.title p span{
+    margin-right: 0.5rem;
+    font-weight: 300;
+}
+
+.navbar ul{
+    display: flex;
+    align-items: center;
+    margin: 0 2rem 0 0;
+    gap: 1rem;
+}
+
+.navbar ul li{
+    list-style: none;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: #F5EFE7;
+    font-size: 1.75rem;
+    font-weight: 300;
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    border-radius: 0.25rem;
+}
+
+.navbar ul li a:hover{
+    color: #213555;
+    background: #D8C4B6;
+    border-right: 0.25rem solid #213555;
+    border-bottom: 0.25rem solid #213555;
+    transition: all 0.3s ease;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero{
+    width: 100%;
+    padding-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left img{
+    border-radius: 1rem;
+}
+
+.right{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.right h1{
+    font-size: 3rem;
+    font-weight: 600;
+    color: #213555;
+    margin: 0.5rem 0;
+}
+
+.right p{
+    font-size: 2rem;
+    font-weight: 300;
+    text-align: justify;
+    color: #213555;
+    margin: 0.5rem 0;
+    margin-right: 8rem;
+}
+
+.skills{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 5rem;
+}
+
+.skills h1{
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #213555;
+    margin: 0.5rem 0;
+}
+
+.skills .cards{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.skills .cards .card{
+    min-height: 350px;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #4F709C;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    transition: ease-in-out 600ms;
+}
+
+.skills .cards .card .icon{
+    font-size: 3rem;
+    color: #213555;
+}
+
+.skills .cards .card .content{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.skills .cards .card .content h3{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #F5EFE7;
+    margin: 0.5rem 0;
+}
+
+.skills .cards .card .content p{
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-align: justify;
+    color: #F5EFE7;
+    margin: 0.5rem 0;
+}
+
+.skills .cards .card:hover{
+    transform: rotateY(180deg);
+    transition: ease-in-out 600ms;
+    transform-style: preserve-3d;
+}
+
+.skills .cards .card:hover .content{
+    transition: ease-in-out 600ms;
+    display: flex;
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+}
+
+.projects{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 3rem;
+}
+
+.projects h1{
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #213555;
+    margin: 0.5rem 0;
+}
+
+.projects .cards{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin: 2rem 0;
+}
+
+.projects .cards .card{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 250px;
+    height: 350px;
+    background: #D8C4B6;
+    border: 0.2rem solid #213555;
+    border-radius: 0.5rem;
+    left: 43%;
+    transition: ease-in-out 600ms;
+}
+
+.projects .cards .card:nth-child(1){
+    scale: 0.75;
+    z-index: 1;
+}
+
+.projects .cards .card:nth-child(2){
+    scale: 0.85;
+    z-index: 2;
+}
+
+.projects .cards .card:nth-child(3){
+    scale: 0.95;
+    z-index: 3;
+}
+
+.projects .cards .card:nth-child(4){
+    scale: 1;
+    z-index: 4;
+}
+
+.projects .cards .card:nth-child(5){
+    scale: 0.95;
+    z-index: 3;
+}
+
+.projects .cards .card:nth-child(6){
+    scale: 0.85;
+    z-index: 2;
+}
+
+.projects .cards .card:nth-child(7){
+    scale: 0.75;
+    z-index: 1;
+}
+
+.projects .cards:hover .card:nth-child(1){
+    transform: translateX(-155%);
+    transition: ease-in-out 600ms;
+}
+
+
+.projects .cards:hover .card:nth-child(2){
+    transform: translateX(-105%);
+    transition: ease-in-out 600ms;
+}
+
+.projects .cards:hover .card:nth-child(3){
+    transform: translateX(-55%);
+    transition: ease-in-out 600ms;
+}
+
+.projects .cards:hover .card:nth-child(4){
+    transform: translateX(0%);
+    transition: ease-in-out 600ms;
+}
+
+.projects .cards:hover .card:nth-child(5){
+    transform: translateX(55%);
+    transition: ease-in-out 600ms;
+}
+
+.projects .cards:hover .card:nth-child(6){
+    transform: translateX(105%);
+    transition: ease-in-out 600ms;
+}
+
+.projects .cards:hover .card:nth-child(7){
+    transform: translateX(155%);
+    transition: ease-in-out 600ms;
+}
+
+.projects .cards:hover .card:hover{
+    scale: 1.25;
+    z-index: 5;
+    cursor: pointer;
+    color: #213555;
+    background: #F5EFE7;
+    transition: ease-in-out 600ms;
+}
+
+.projects .cards .card a{
+    font-size: 2rem;
+    font-weight: 600;
+    flex-direction: column;
+    text-decoration: none;
+    color: #213555;
+    transition: ease-in-out 600ms;
+}
+
+.projects .cards .card a span{
+    font-size: 3rem;
+    border: 0.2rem solid #213555;
+    margin: 0.5rem;
+    transition: ease-in-out 600ms;
+}
+
+.projects .cards .card a span:hover{
+    color: #4F709C;
+    transition: ease-in-out 600ms;
+}
+
+.recomendations{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 3rem;
+}
+
+.recomendations h1{
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #213555;
+    margin: 0.5rem 0;
+}
+
+.recomendations .cards{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.recomendations .cards .card{
+    width: 30%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #F5EFE7;
+    background: #4F709C;
+    border: 0.2rem solid #213555;
+    border-radius: 1rem 0;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.recomendations .form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 3rem;
+}
+
+.recomendations .form form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.recomendations .form form input{
+    width: 50%;
+    height: 2rem;
+    border: 0.2rem solid #213555;
+    border-radius: 0.5rem;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    outline: none;
+}
+
+.recomendations .form form textarea{
+    width: 50%;
+    height: 10rem;
+    border: 0.2rem solid #213555;
+    border-radius: 0.5rem;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    outline: none;
+}
+
+.recomendations .form form button{
+    width: 50%;
+    border: 0.2rem solid #213555;
+    border-radius: 0.5rem;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    outline: none;
+    background: #4F709C;
+    color: #F5EFE7;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: ease-in-out 600ms;
+}
+
+.recomendations .form form button:hover{
+    background: #213555;
+    transition: ease-in-out 600ms;
+}
+
+footer{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+footer .uparrow{
+    width: 3rem;
+    height: 3rem;
+    background: #4F709C;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    cursor: pointer;
+    transition: ease-in-out 600ms;
+}
+
+footer .uparrow:hover{
+    background: #213555;
+    transition: ease-in-out 600ms;
+}
+
+footer .uparrow a{
+    font-size: 2rem;
+    color: #F5EFE7;
+    text-decoration: none;
+    transition: ease-in-out 600ms;
+}
+
+.popup{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: ease-in-out 600ms;
+}
+
+.popup.active{
+    opacity: 1;
+    pointer-events: all;
+    transition: ease-in-out 600ms;
+}
+
+.popup .content{
+    width: 50%;
+    height: 50%;
+    background: #F5EFE7;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.popup .content h1{
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #213555;
+    margin: 0.5rem 0;
+}
+
+.popup .content p{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #213555;
+    margin: 0.5rem 0;
+}
+
+.popup .content .close{
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 30%;
+    right: 30%;
+    background: #4F709C;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    cursor: pointer;
+    transition: ease-in-out 600ms;
+}
+
+.popup .content .close:hover{
+    background: #213555;
+    transition: ease-in-out 600ms;
+}

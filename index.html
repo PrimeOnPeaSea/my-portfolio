@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeOnPeaSea</title>
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/63504075?v=4">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header>
+        <div class="title">
+            <h1>Prime</h1>
+            <p><span><i class="fas fa-envelope"></i></span>primeonpeasea@gmail.com</p>
+            <p><span><i class="fas fa-phone-alt"></i></span>+91 7055455847</p>
+        </div>
+        <div class="navbar">
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#recom">Recommendations</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="main">
+
+        <section class="hero" id="about">
+            <div class="left">
+                <img src="https://avatars.githubusercontent.com/u/63504075?v=4" alt="Prime Stock">
+            </div>
+            <div class="right">
+                <h1>Hi, I'm Prime</h1>
+                <p>I'm a 3rd year student pursuing B.Tech in Computer Science and Engineering from Chandigarh University, Chandigarh. I'm a Game Developer, Web Developer and a Competitive Programmer.</p>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <h1>
+                <span>Skills</span>
+            </h1>
+            <div class="cards">
+                <div class="card">
+                    <div class="icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="content">
+                        <h3>Game Development</h3>
+                        <p>I have experience in building games using Unity, C#, Blender, etc.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="content">
+                        <h3>Web Development</h3>
+                        <p>I have experience in building websites using HTML, CSS, JavaScript, Bootstrap, PHP, MySQL, Node.js, Express.js, MongoDB, React.js, Next.js, etc.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="content">
+                        <h3>Competitive Programming</h3>
+                        <p>I have experience in solving problems on various platforms like CodeChef, Codeforces, HackerRank, etc.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <h1>
+                <span>Projects</span>
+            </h1>
+            <div class="cards">
+                <div class="card">
+                    <a href="">Tic Tac Toe</a>
+                </div>
+                <div class="card">
+                    <a href="">Ekaa2D</a>
+                </div>
+                <div class="card">
+                    <a href="">Weather API Fetch</a>
+                </div>
+                <div class="card">
+                    <a href="https://github.com/PrimeOnPeaSea" target="_blank">
+                        Check out my <br><br><span> GITHUB </span><br><br> for projects
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="">Live Chat System Plugin</a>
+                </div>
+                <div class="card">
+                    <a href="">projectM</a>
+                </div>
+                <div class="card">
+                    <a href="">VedYajna</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="recomendations" id="recom">
+            <h1>
+                <span>Recommendations</span>
+            </h1>
+            <div class="cards">
+               
+            </div>
+            <div class="form">
+                <form action="">
+                    <input type="text" name="name" placeholder="Name(Optional)">
+                    <textarea name="message" placeholder="Message" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <div class="popup">
+        <div class="content">
+            <div class="close">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="text">
+                <h1>Thank You!</h1>
+                <p>Your message has been sent.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="uparrow">
+            <a href="#about"><i class="fas fa-arrow-up"></i></a>
+        </div>
+    </footer>
+<script>
+    const navbar = document.querySelector('.navbar');
+    const sticky = navbar.offsetTop;
+    window.onscroll = function() {myFunction()};
+    function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+        }
+    }
+
+    const cards = document.querySelectorAll('#recom .cards');
+    fetch('recom.json')
+    .then(response => response.json())
+    .then(data => {
+        data.forEach((recom) => {
+            const card = document.createElement('div');
+            card.classList.add('card');
+            card.innerHTML = `
+                <div class="content">
+                    <p>"${recom.message}"</p>
+                </div>
+            `;
+            cards[0].appendChild(card);
+        });
+    });
+
+    const form = document.querySelector('#recom .form form');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = form.name.value;
+        const message = form.message.value;
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.innerHTML = `
+            <div class="content">
+                <p>"${message}"</p>
+            </div>
+        `;
+        cards[0].appendChild(card);
+        form.reset();
+        popup.classList.add('active');
+    });
+
+
+    const popup = document.querySelector('.popup');
+    const close = document.querySelector('.popup .close');
+    close.addEventListener('click', () => {
+        popup.classList.remove('active');
+    });
+</script>
+
+</body>
+</html>
